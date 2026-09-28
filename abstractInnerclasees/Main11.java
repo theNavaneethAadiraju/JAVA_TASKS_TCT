@@ -4,12 +4,12 @@ package com.javatasks.abstractInnerclasees;
 interface SmartDevice {
     // Default method
     default void connect() {
-        System.out.println("Device is connecting...");
+        System.out.println("Device is not connecting...");
     }
     
     // Static method
     static void status() {
-        System.out.println("Device is online.");
+        System.out.println("Device is not  online.");
     }
 }
 
@@ -17,16 +17,16 @@ class SmartPhone implements SmartDevice {
     // Overriding the default method
     @Override
     public void connect() {
-        System.out.println("Smartphone is connecting to WiFi.");
+        System.out.println("Smartphone is not  connecting to WiFi.");
     }
 }
 
 public class Main11 {
     public static void main(String[] args) {
-        // Calling static method from the interface
-        SmartDevice.status();  // Outputs: Device is online.
+        
+        SmartDevice.status(); 
 
         SmartPhone phone = new SmartPhone();
-        phone.connect();  // Outputs: Smartphone is connecting to WiFi.
+        phone.connect();
     }
 }
